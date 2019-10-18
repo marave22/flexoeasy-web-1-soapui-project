@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ae47ad2f-e15c-4415-9131-32522cf6c822" activeEnvironment="Default" name="flexoeasy_web 1" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="7d029a73-4fa2-4431-9342-8ec01961242d" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://139.59.147.218:3002" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://139.59.147.218:3002</con:endpoint></con:endpoints><con:resource name="Authenticate" path="/web/users/authenticate" id="aedfc45b-23a7-415d-b5ad-fbabbcd7b303"><con:settings/><con:parameters/><con:method name="Authenticate 1" id="d860eafc-5aa0-4789-9d69-96aad9b2ae7e" method="POST"><con:settings/><con:parameters/><con:request name="http://139.59.147.218:3002/web/users/authenticate" id="9e971565-c2ad-4d90-a2d4-4dbc764d3e7a" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Registration" path="/web/users/registration" id="5323d6c1-4504-4c9e-9b35-195a743d2fe7"><con:settings/><con:parameters/><con:method name="Registration 1" id="0482b405-48e6-4e20-9c7e-a7da4d5ff775" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:reg="http://139.59.147.218/web/users/registration">reg:Response</con:element></con:representation><con:request name="http://139.59.147.218:3002/web/users/registration" id="f02c4354-e7f4-4998-bea3-1e4c03dc7b97" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam.avetisyannnn@gmail.com",
+	"password":"123123123",
+	"repassword":"123123123",
+	"phone":"123456789",
+	"companyName":"mmm",
+	"tradeLicense":"/Users/tatev/Downloads/Hosting_Proposal_Studio_One.pdf",
+	"trnCertificate":"/Users/tatev/Downloads/reviews.csv"
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="Confirm" path="/web/users/confirm" id="2868a15d-8028-4edc-ae3d-d7f5f1dba83b"><con:settings/><con:parameters/><con:method name="Confirm 1" id="52061760-76c2-497c-a5b3-e3825d417e09" method="POST"><con:settings/><con:parameters/><con:request name="http://139.59.147.218:3002/web/users/confirm" id="435adf92-3ed9-4576-b0e3-44447e1db03d" mediaType="application/json"><con:settings/><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="1caaf7e4-5aa9-472f-85ed-078d728df102" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="fb334c6d-27e5-42af-99a6-a62681c4f2c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Registration" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Test Case 1" id="c7e29b41-0a53-4897-8398-9653697324fd"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 1" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"",
+	"lastname":"",
+	"email":"",
+	"password":"",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="JsonPath Count" id="f3136e08-c33b-4f9f-b111-7f8db77181f0" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="aa4e952d-3a92-4858-a26d-210d5992c88a" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="146ab36a-af48-4edb-873c-ebe53313fb4c" name="Script Assertion"><con:configuration><scriptText>//check the response time is less than 200ms
+assert messageExchange.timeTaken &lt; 200
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="bb9bcca6-62dc-4170-b7a5-fd30c54b6678" name="Script Assertion (check error messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+//log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+//log.info jsonsl.err.data.errors[1].message
+def message1 = jsonsl.err.data.errors[1].message
+assert message1 == "Please enter a valid email address"
+//log.info jsonsl.err.data.errors[2].message
+def message2 = jsonsl.err.data.errors[2].message
+assert message2 == "Please enter your password"
+//log.info jsonsl.err.data.errors[3].message
+def message3 = jsonsl.err.data.errors[3].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[2].type
+def errorType3 = jsonsl.err.data.errors[3].type
+log.info jsonsl.err.data.errors[0].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[3].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 2" id="ca049b9b-a250-472b-b8a6-8785215208b3"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 2" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"",
+	"password":"",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Response SLA Assertion" id="2f2a6dcf-0f23-4e25-95be-7067eca783f7" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="8e4942ac-cb94-4437-9316-4213d5925b7c" name="Invalid HTTP Status Codes"><con:configuration><codes>404
+</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="81529842-b53e-45c3-bf1b-63c38f93009d" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="3f6f4663-a9d6-4102-9b46-91a9687fcd50" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="c05decf9-1a6c-47fc-b6bf-9e365fe5df63" name="Script Assertion"><con:configuration><scriptText>messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b39ea2b3-eab7-4f76-9876-0f44e19b4892" name="Script Assertion (checking validation error)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+log.info jsonsl.err.data.errors[1].message
+def message1 = jsonsl.err.data.errors[1].message
+assert message1 == "Please enter a valid email address"
+log.info jsonsl.err.data.errors[2].message
+def message2 = jsonsl.err.data.errors[2].message
+assert message2 == "Please enter your password"
+log.info jsonsl.err.data.errors[3].message
+def message3 = jsonsl.err.data.errors[3].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[2].type
+def errorType3 = jsonsl.err.data.errors[3].type
+log.info jsonsl.err.data.errors[0].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[3].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 3" id="a2b23ac8-b9e3-43d3-90bb-efb19cabd479"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 3" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam",
+	"password":"",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Response SLA Assertion" id="19e6c23a-0b3a-4898-897f-d66eb64540ee" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="a9e681f7-0883-4036-92a2-881652d113c2" name="Invalid HTTP Status Codes"><con:configuration><codes>404
+</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="89459af4-d851-4171-a1d8-817144018b25" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="a58be0c4-d5f9-41e8-b48c-12323b9dd626" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="66543e8f-1cf8-4aa9-b7cc-298a83cd0918" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="57ed4f46-6179-4635-8d81-4b1740386536" name="Script Assertion (checking validation errors &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+log.info jsonsl.err.data.errors[1].message
+def message1 = jsonsl.err.data.errors[1].message
+assert message1 == "Please enter a valid email address"
+log.info jsonsl.err.data.errors[2].message
+def message2 = jsonsl.err.data.errors[2].message
+assert message2 == "Please enter your password"
+log.info jsonsl.err.data.errors[3].message
+def message3 = jsonsl.err.data.errors[3].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[2].type
+def errorType3 = jsonsl.err.data.errors[3].type
+log.info jsonsl.err.data.errors[0].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[3].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 4" id="bbcc6052-e3ca-4cea-8f99-b3e358b325b0"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 4" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam@",
+	"password":"",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Response SLA Assertion" id="23339b3c-3293-4ba2-96ca-5bf2c19145d3" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="9b0e0139-df73-4a0f-9970-8f396bca5869" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="ebb67def-2f81-4698-9874-cc135fdf8fff" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="3ee1f889-b81c-430b-a9b4-33a7d53737cf" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="340c3b3b-dcf8-4549-880a-f19d0026fa96" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="2d7f01a2-d929-4dcb-85ef-b6a703359bc0" name="Script Assertion (chekcing validation errors &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+log.info jsonsl.err.data.errors[1].message
+def message1 = jsonsl.err.data.errors[1].message
+assert message1 == "Please enter a valid email address"
+log.info jsonsl.err.data.errors[2].message
+def message2 = jsonsl.err.data.errors[2].message
+assert message2 == "Please enter your password"
+log.info jsonsl.err.data.errors[3].message
+def message3 = jsonsl.err.data.errors[3].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[2].type
+def errorType3 = jsonsl.err.data.errors[3].type
+log.info jsonsl.err.data.errors[0].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[3].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 5" id="71e344fb-c8fa-45f2-8ef2-2cfd14a801d5"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 5" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="47c20cf3-ea9a-4a2a-af41-94e18ad38466" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="90fc0066-2b13-4426-b545-19b3c75f300d" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="3db88f75-ab4e-48c1-bcb8-8b64887c43c0" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="fed39755-b8b2-47cc-8d79-86b652e82349" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="1bb8e73e-70e3-4968-a9f7-914cca3791eb" name="Script Assertion (checking validation erros &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+//log.info jsonsl.err.data.errors[1].message
+//def message1 = jsonsl.err.data.errors[1].message
+//assert message1 == "Please enter a valid email address"
+log.info jsonsl.err.data.errors[1].message
+def message2 = jsonsl.err.data.errors[1].message
+assert message2 == "Please enter your password"
+log.info jsonsl.err.data.errors[2].message
+def message3 = jsonsl.err.data.errors[2].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+//def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[1].type
+def errorType3 = jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[0].type
+//log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="4c3f82ab-dfbb-4a15-9ec4-68b988640437" name="Script Assertion 1"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 6" id="a923469d-0f45-4d61-84ad-54d7ad87cb20"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 6" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"123465",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="e0c83cb1-8d98-4ccb-9af2-4f9761676893" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="0686bee0-e26c-425f-89c5-d60ebd0e45db" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="92545082-5329-4e06-914e-4ca0022f0d71" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="5a963082-ebeb-4bf3-b610-900a5371f9da" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6b9c51d4-74c1-412f-bf97-df507526a26d" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="25f46bc8-f8c7-4057-b1a1-b510cc172153" name="Script Assertion (checking validation errors &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password should be at least 8 characters"
+//log.info jsonsl.err.data.errors[1].message
+//def message1 = jsonsl.err.data.errors[1].message
+//assert message1 == "Please enter a valid email address"
+log.info jsonsl.err.data.errors[1].message
+def message2 = jsonsl.err.data.errors[1].message
+assert message2 == "Password confirmation doesn't match Password"
+log.info jsonsl.err.data.errors[2].message
+def message3 = jsonsl.err.data.errors[2].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+//def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[1].type
+def errorType3 = jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[0].type
+//log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[2].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 7" id="44ed68ee-bb33-4338-acf5-a17715ed2d72"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 7" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"123465798",
+	"repassword":"",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="d4163062-8b19-44b6-b05c-3aa9f9de831f" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="1544a946-652a-42cd-89de-3dd2dccec60f" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="7873e260-badc-478e-91fa-dbefe745081a" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="2517bb32-7c25-44e9-bb4d-83a9d98abefc" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="32aaec93-1243-442a-a5e7-471aac84ab11" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="de498015-d726-46cf-9739-350b7e8b30c7" name="Script Assertion (checking validation errors &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password confirmation doesn't match Password"
+//log.info jsonsl.err.data.errors[1].message
+//def message1 = jsonsl.err.data.errors[1].message
+//assert message1 == "Please enter a valid email address"
+//log.info jsonsl.err.data.errors[1].message
+//def message2 = jsonsl.err.data.errors[1].message
+//assert message2 == "Please enter your password"
+log.info jsonsl.err.data.errors[1].message
+def message3 = jsonsl.err.data.errors[1].message
+assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+//def errorType1 = jsonsl.err.data.errors[1].type
+def errorType2 = jsonsl.err.data.errors[1].type
+//def errorType3 = jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[0].type
+//log.info jsonsl.err.data.errors[1].type
+log.info jsonsl.err.data.errors[1].type
+//log.info jsonsl.err.data.errors[2].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 8" id="9b4c584d-ef99-4c6c-913a-9f3b5934deea"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 8" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"123465798",
+	"repassword":"123",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="6143d0d5-9b02-4289-8015-b3517a9c224e" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="947872ac-bbf5-49e1-959f-c6cc688fb833" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="a19ad9ab-1a7c-40e7-9719-6876fb62a92e" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="02881d8d-2c5d-4dcc-b5b3-9dda58985355" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6569aa1f-1beb-483a-9c43-b21d632ea9e0" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="4e38ec4c-c3e7-4ef1-a17c-4a8d90d0bcfd" name="Script Assertion (checking validation email &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "Password confirmation doesn't match Password"
+//log.info jsonsl.err.data.errors[1].message
+//def message1 = jsonsl.err.data.errors[1].message
+//assert message1 == "Please enter a valid email address"
+//log.info jsonsl.err.data.errors[1].message
+//def message2 = jsonsl.err.data.errors[1].message
+//assert message2 == "Please enter your password"
+//log.info jsonsl.err.data.errors[2].message
+//def message3 = jsonsl.err.data.errors[2].message
+//assert message3 == "Please enter your password confirmation"
+//checking if the first error type is Validation Error
+def errorType0 = jsonsl.err.data.errors[0].type
+//def errorType1 = jsonsl.err.data.errors[1].type
+//def errorType2 = jsonsl.err.data.errors[1].type
+//def errorType3 = jsonsl.err.data.errors[2].type
+log.info jsonsl.err.data.errors[0].type
+//log.info jsonsl.err.data.errors[1].type
+//log.info jsonsl.err.data.errors[1].type
+//log.info jsonsl.err.data.errors[2].type
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 9" id="30a0da4f-0161-4407-8ab2-d393eb49c360"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 9" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"123465798",
+	"repassword":"123465798",
+	"phone":"",
+	"companyName":"",
+	"tradeLicense":"",
+	"trnCertificate":""
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="283359d3-5b9d-45cb-873c-010548cdd862" name="Invalid HTTP Status Codes"><con:configuration><codes>404
+</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="070d663d-c31f-4fcd-84a3-c27eed17255b" name="Valid HTTP Status Codes"><con:configuration><codes>200
+</codes></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="35a1938a-1c53-49c7-9105-18e3c705f2c9" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="2345bb9a-58cf-47fe-93a8-575247ca89dc" name="JsonPath Count"><con:configuration><path>$[err][data][errors]</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="15662ed5-88ab-4b2b-822e-25f0f5d09bbd" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="5adfc0fe-3af1-451d-8eb0-6d8fee4159c7" name="Script Assertion (checking validation errors &amp; messages)"><con:configuration><scriptText>//The test case check the case when all fields don't fill in
+//check the error message match
+//Grabbing the response
+import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl.err.data.errors[0].message
+def message0 = jsonsl.err.data.errors[0].message
+assert message0 == "email must be unique"
+def errorType0 = jsonsl.err.data.errors[0].type
+log.info jsonsl.err.data.errors[0].type
+def value = jsonsl.err.data.errors[0].value
+log.info value
+</scriptText></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="731f437a-dc3d-4428-bc5d-3fae750b1af8" name="JsonPath Count 1"><con:configuration><path>$[err][data][errors]</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 10" id="19977e72-a215-4fa7-8eb2-a2a89dc9e12e"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 10" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam2@gmail.com",
+	"password":"123465798",
+	"repassword":"123465798",
+	"phone":"789456123",
+	"companyName":"asd",
+	"tradeLicense":"asd",
+	"trnCertificate":"asd"
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:assertion type="Invalid HTTP Status Codes" id="4fb0cc4d-fc34-4d2e-8d09-8ce7d23c91b6" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="933a840c-6b9d-4602-aeb6-06ca4bf39b05" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="14e72d2d-eb5d-4303-a9c6-e4ed10dd060b" name="JsonPath Count"><con:configuration><path>$[payload]</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Response SLA Assertion" id="3e765fbc-f8a9-4ee3-be3a-7f4f783cc0ef" name="Response SLA"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="84f29fbf-bccd-46ad-9283-4948c9a6565e" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.timeTaken &lt; 200</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="d98571c6-ea3c-45a9-9513-addc48b207fa" name="Script Assertion 1"><con:configuration><scriptText>//The test case check that case when all fields are fill in
+//Grabbing the response
+import groovy.json.JsonSlurper
+def response = messageExchange.response.responseContent
+def jsonsl = new JsonSlurper().parseText(ResponseMessage)
+log.info jsonsl
+</scriptText></con:configuration></con:assertion><con:assertion type="Simple Contains" id="ffce7d17-12a5-4d6e-8b82-8795c4941ea9" name="Contains"><con:configuration><token>null</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Test Case 11 (Another_diff email)" id="8a81df07-f8db-4c84-8c9f-ba3198993a03"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Registration 1" resourcePath="/web/users/registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 11 (Another_diff email)" id="53638016-45e2-44df-ad7f-3e953f25cb53" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request>{
+	"firstname":"mariam",
+	"lastname":"avetisyan",
+	"email":"mariam1@gmail.com",
+	"password":"123465798",
+	"repassword":"123465798",
+	"phone":"789456123",
+	"companyName":"asd",
+	"tradeLicense":"asd",
+	"trnCertificate":"asd"
+}</con:request><con:originalUri>http://139.59.147.218/web/users/registration</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:loadTest id="76158f5f-8d28-4070-98f6-c4ec1fb8cc67" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>7</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties><con:property><con:name>baseurl</con:name><con:value>http://139.59.147.218:3002</con:value></con:property></con:properties></con:testCase><con:testCase id="3763cb4b-a3d1-4f20-a43b-68eb7c3eeb0e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Authenticate" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Test Case 1" id="d2a96254-fba9-43be-9b8b-71f72215011f"><con:settings/><con:config service="http://139.59.147.218:3002" methodName="Authenticate 1" resourcePath="/web/users/authenticate" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Test Case 1" id="72e3a869-7a8c-47d5-ba7f-29223b3d5759" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.59.147.218:3002</con:endpoint><con:request/><con:originalUri>http://139.59.147.218/web/users/authenticate</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>baseurl</con:name><con:value>http://139.59.147.218:3002</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
